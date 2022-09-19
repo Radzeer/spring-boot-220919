@@ -24,6 +24,6 @@ public class HelloController {
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     @ResponseBody // a visszatérési értéket írja a http válaszba.
     public String sayHello(){
-        return helloService.sayHello();
+        return helloService.sayHello().toUpperCase();
     }
 }
