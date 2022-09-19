@@ -22,7 +22,7 @@ public class HelloControllerTest {
     void testSayHello(){
         when(service.sayHello()).thenReturn("sample return from service");
 
-        assertEquals("SAMPLE RETURN from SERVICE",service.sayHello());
+        assertEquals("SAMPLE RETURN FROM SERVICE",controller.sayHello());
 
     }
 }
