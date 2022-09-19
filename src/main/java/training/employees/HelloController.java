@@ -16,7 +16,7 @@ public class HelloController {
 
     private HelloService helloService;
 
-    //Construktor injection
+    //Constructor injection
    /* public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }*/
