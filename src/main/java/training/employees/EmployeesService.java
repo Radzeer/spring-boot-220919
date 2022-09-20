@@ -24,6 +24,16 @@ public class EmployeesService {
         /*var employee = repository.findById(id);
         return new EmployeeDetailsDto(employee.getId(), employee.getName(), employee.getYearOfBirth());*/
         return employeeMapper.toDto(repository.findById(id));
+    }
 
+    public EmployeeDetailsDto createEmployee(CreateEmployeeCommand command){
+        var employee = employeeMapper.toEntity(command);
+        repository.save(employee);
+        return employeeMapper.toDto(employee);
+    }
+
+    public EmployeeDetailsDto updateEmployee(long id,UpdateEmployeeCommand command){
+        var employee = repository.update(id,command.getYearOfBirth());
+        return employeeMapper.toDto(employee);
     }
 }

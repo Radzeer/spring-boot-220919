@@ -22,4 +22,14 @@ public class EmployeeController {
     public EmployeeDetailsDto findEmployeeById(@PathVariable("id") long id){
         return service.findEmployeeById(id);
     }
+
+    @PostMapping
+    public EmployeeDetailsDto createEmployee(@RequestBody CreateEmployeeCommand command){
+        return service.createEmployee(command);
+    }
+
+    @PutMapping("{id}")
+    public EmployeeDetailsDto updateEmployee(@PathVariable("id") long id,@RequestBody UpdateEmployeeCommand command){
+        return service.updateEmployee(id,command);
+    }
 }
