@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -12,11 +13,11 @@ public class EmployeesService {
     private EmployeesRepository repository;
 
     private EmployeeMapper employeeMapper;
-    public List<EmployeeDto> findAll(){
+    public List<EmployeeDto> findAll(Optional<String> prefix){
         /*return repository.findAll().stream()
                 .map(e->new EmployeeDto(e.getId(),e.getName()))
                 .toList();*/
-        return employeeMapper.toDto(repository.findAll());
+        return employeeMapper.toDto(repository.findAll(prefix));
     }
 
     public EmployeeDetailsDto findEmployeeById(long id){
