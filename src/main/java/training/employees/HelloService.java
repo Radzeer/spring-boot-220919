@@ -11,6 +11,6 @@ public class HelloService {
     private TimeMachine timeMachine;
 
     public String sayHello(){
-        return "Hello from DevTools4 Service! " + timeMachine.now();
+        return "Hello from Service! " + timeMachine.now();
     }
 }
